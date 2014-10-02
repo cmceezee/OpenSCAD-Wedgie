@@ -15,4 +15,4 @@ gap_sk 		= 0.38;
 //slot dimensions
 slot_w 		= 1;
 slot_l 		= 10;
-slot_h 		= 1.1*w_height
+slot_h 		= 1.1*w_height;
