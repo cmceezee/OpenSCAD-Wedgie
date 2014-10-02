@@ -24,10 +24,25 @@ module wedgie()
 				cube([slot_w,slot_l,slot_h], center=true);
 		}
 		
-		// wedge cut
-		translate([w_length*-0.2, 0, w_height*.5])
-			rotate([0, -10, 0])
-				cube([w_length*1.2,w_width*1.2, w_height], true);
+		// wedge
+		rotate([0, -10, 0])
+		translate([w_length*-0.1, 0, w_height*.7])
+		{
+			cube([w_length*1.2,w_width*1.2, w_height], true);
+			
+			render(convexity = 10)
+			translate([0,0, w_height*.45])
+			rotate([0, 180, 270])
+			intersection()
+			{
+				scale([.3, .3, .1])
+					surface("d_tenth.png", center=true, invert=true);
+				translate([0,0,w_height])
+					cube([w_width, w_width, w_height*.5], true);
+			}
+		}
+		
+
 	}
 }
 
