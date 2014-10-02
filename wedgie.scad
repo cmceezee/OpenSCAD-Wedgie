@@ -23,6 +23,11 @@ module wedgie()
 			translate([gap_sk*w_length+slot_l/2,w_width/7,0]) rotate([0,0,20]) 
 				cube([slot_w,slot_l,slot_h], center=true);
 		}
+		
+		// wedge cut
+		translate([w_length*-0.2, 0, w_height*.5])
+			rotate([0, -10, 0])
+				cube([w_length*1.2,w_width*1.2, w_height], true);
 	}
 }
 
